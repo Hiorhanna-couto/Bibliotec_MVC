@@ -22,7 +22,7 @@ namespace Bibliotec.Models
         [ForeignKey("Categoria")]
 
         public int CategoriaID {get ; set;}
-        public int Categoria {get ; set;}
        
+       public Categoria? Categoria {get ; set;}
     }
 }
