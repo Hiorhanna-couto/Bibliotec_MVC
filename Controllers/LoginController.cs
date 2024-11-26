@@ -23,19 +23,12 @@ namespace Bibliotec.Controllers
         }
 
         Context context = new Context();
-        private IEnumerable<Usuario> listaUsuario;
-
         public IActionResult Index()
         {
             return View();
         }
 
-        public Context GetContext()
-        {
-            return context;
-        }
-
-         [Route("Lagar")] 
+         [Route("Logar")] 
         public IActionResult Logar(IFormCollection form)
         {
             //Criar duas variaceis  para armazenas as informacoes do formulario
@@ -63,7 +56,9 @@ namespace Bibliotec.Controllers
              }else{
 
                 Console.WriteLine($"Eba voce entrou!");
-                  return LocalRedirect("~/Livro2");
+                HttpContext.Session.SetString("Usuario",usuarioBuscado.UsuarioID.ToString());
+                HttpContext.Session.SetString("Admin",usuarioBuscado.Admin.ToString());
+                  return LocalRedirect("~/Home");
              }
 
 

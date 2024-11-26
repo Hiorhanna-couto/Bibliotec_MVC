@@ -29,7 +29,8 @@ namespace Bibliotec.Contexts
             //ALUNOS:
             //optionsBuilder.UseSqlServer
 
-             optionsBuilder.UseSqlServer("Data Source=DESKTOP-EVM36M7\\SQLEXPRESS02; Initial Catalog = Bibliotec; User Id=sa; Password=123; Integrated Security=true; TrustServerCertificate = true");
+            //  optionsBuilder.UseSqlServer("Data Source=DESKTOP-EVM36M7\\SQLEXPRESS02; Initial Catalog = Bibliotec_mvc; User Id=sa; Password=123; Integrated Security=true; TrustServerCertificate = true");
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-EVM36M7\\SQLEXPRESS02; Initial Catalog = Bibliotec_mvc; User Id=sa; Password=123; TrustServerCertificate = true");
 
 
          }
@@ -39,7 +40,7 @@ namespace Bibliotec.Contexts
      // As referencias das nossas tabelas no Banco de dados:
      public DbSet<Categoria> Categoria{ get; set ;}
       //Curso
-     public DbSet<Cursos> Cursos{ get; set ;}
+     public DbSet<Curso> Curso{ get; set ;}
       //livro
      public DbSet<Livro> livro{ get; set ;}
       //livroCategoria

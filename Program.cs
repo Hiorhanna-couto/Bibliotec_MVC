@@ -1,7 +1,19 @@
+using Microsoft.Extensions.Options;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// infor da minha sesseio
+
+builder.Services.AddSession(Options =>
+{
+ Options.IdleTimeout = TimeSpan.FromHours(5);
+ Options.Cookie.HttpOnly = true;
+ Options.Cookie.IsEssential = true;
+
+} );
 
 var app = builder.Build();
 
@@ -17,6 +29,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseSession();
 
 app.UseAuthorization();
 

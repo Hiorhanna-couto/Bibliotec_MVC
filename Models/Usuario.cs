@@ -15,7 +15,7 @@ namespace Bibliotec.Models
         public DateOnly DtNascimento {get ; set;}
         public string? Email {get ; set;}
         public string? Senha {get ; set;}
-        public string? Contado {get ; set;}
+        public string? Contato {get ; set;}
         public bool Admin {get ; set;}
         public bool Status {get ; set;}
 
@@ -23,9 +23,11 @@ namespace Bibliotec.Models
         //EU falo par esta atributo que ele e uma fk
 
         [ForeignKey("Curso")]
-       public int cursoID { get; set;}
+       public int? CursoID { get; set;}
      
-       public Cursos ? curso { get ; set ;}
+       public Curso? Curso { get ; set ;}
 
     }
+
+
 }
